@@ -1,141 +1,140 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Speam</title>
-<link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>SPEAM</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="background-glow"></div>
-
-<header class="navbar">
-<div class="logo">SPEAM</div>
-
-<nav>
-<a href="#">Início</a>
-<a href="#">Loja</a>
-<a href="#">Biblioteca</a>
-<a href="#">Comunidade</a>
-<a href="#">Notícias</a>
-<a href="#">Suporte</a>
-</nav>
-
-<div class="actions">
-<input type="text" id="searchInput" placeholder="Pesquisar jogos">
-<button class="blue-btn">Login</button>
-<button class="outline-btn">Cadastro</button>
-<button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+<div id="loginScreen" class="login-screen">
+  <div class="login-box">
+    <h1>SPEAM</h1>
+    <input id="username" placeholder="Digite seu usuário">
+    <button onclick="login()">ENTRAR</button>
+  </div>
 </div>
+
+<header>
+  <div class="logo">SPEAM</div>
+
+  <nav>
+    <a href="#store">Loja</a>
+    <a href="#library">Biblioteca</a>
+    <a href="#community">Comunidade</a>
+    <a href="#profile">Perfil</a>
+  </nav>
+
+  <div class="profile-mini">
+    <span id="profileName">Convidado</span>
+    <div class="avatar"></div>
+  </div>
 </header>
 
 <section class="hero">
-<div class="hero-content">
-<h1>O futuro dos games começa agora.</h1>
-<p>Experimente uma plataforma gamer premium inspirada nas maiores lojas AAA do mundo.</p>
+  <div>
+    <h1>Bem-vindo à SPEAM</h1>
+    <p>Uma experiência inspirada em launchers modernos.</p>
+    <button onclick="showNotification('Explorando loja...')">EXPLORAR</button>
+  </div>
+</section>
 
-<div class="hero-buttons">
-<button class="blue-btn">Comprar Agora</button>
-<button class="outline-btn">Ver Trailer</button>
-</div>
-</div>
+<section id="store" class="section">
+  <h2>DESTAQUES</h2>
+
+  <div class="games">
+
+    <div class="card">
+      <div class="thumb one"></div>
+      <h3>Cyber Future</h3>
+      <p>R$ 149,90</p>
+
+      <div class="buttons">
+        <button onclick="buyGame('Cyber Future')">Comprar</button>
+        <button onclick="wishlist('Cyber Future')">Wishlist</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="thumb two"></div>
+      <h3>Shadow Arena</h3>
+      <p>R$ 59,90</p>
+
+      <div class="buttons">
+        <button onclick="buyGame('Shadow Arena')">Comprar</button>
+        <button onclick="wishlist('Shadow Arena')">Wishlist</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="thumb three"></div>
+      <h3>Night Protocol</h3>
+      <p>R$ 89,90</p>
+
+      <div class="buttons">
+        <button onclick="buyGame('Night Protocol')">Comprar</button>
+        <button onclick="wishlist('Night Protocol')">Wishlist</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="library" class="section">
+  <h2>BIBLIOTECA</h2>
+
+  <div id="libraryList"></div>
 </section>
 
 <section class="section">
-<div class="section-header">
-<h2>Jogos Populares</h2>
-</div>
+  <h2>DOWNLOAD SIMULADO</h2>
 
-<div class="games-grid" id="gamesGrid"></div>
+  <div class="download-box">
+    <p id="downloadText">Nenhum download em andamento.</p>
+
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-<div class="section-header">
-<h2>Biblioteca</h2>
-</div>
+<section id="community" class="section">
+  <h2>COMUNIDADE</h2>
 
-<div class="library-grid">
-<div class="library-card">
-<h3>Cyber Nova</h3>
-<p>128 horas jogadas</p>
-<div class="progress"><span style="width:85%"></span></div>
-</div>
+  <div class="community-post">
+    <strong>PlayerBR</strong>
+    <p>acabou de desbloquear uma conquista rara.</p>
+  </div>
 
-<div class="library-card">
-<h3>Dark Ruins</h3>
-<p>72 horas jogadas</p>
-<div class="progress"><span style="width:55%"></span></div>
-</div>
+  <div class="community-post">
+    <strong>GhostZX</strong>
+    <p>publicou uma nova screenshot.</p>
+  </div>
 
-<div class="library-card">
-<h3>Galaxy Arena</h3>
-<p>204 horas jogadas</p>
-<div class="progress"><span style="width:95%"></span></div>
-</div>
-</div>
+  <div class="community-post">
+    <strong>NovaTeam</strong>
+    <p>está procurando jogadores.</p>
+  </div>
 </section>
 
-<section class="section">
-<div class="section-header">
-<h2>Comunidade</h2>
-</div>
+<section id="profile" class="section">
+  <h2>PERFIL</h2>
 
-<div class="community-post">
-<div class="avatar">🎮</div>
-<div>
-<h3>PlayerX</h3>
-<p>Cyber Nova é o melhor RPG sci-fi do ano.</p>
-<span>👍 4.2k curtidas</span>
-</div>
-</div>
+  <div class="profile-box">
+    <div class="avatar large"></div>
 
-<div class="community-post">
-<div class="avatar">🔥</div>
-<div>
-<h3>ShadowHunter</h3>
-<p>Dark Ruins tem a atmosfera mais insana que já vi.</p>
-<span>👍 2.1k curtidas</span>
-</div>
-</div>
+    <div>
+      <h3 id="profileBig">Convidado</h3>
+      <p>Nível 17</p>
+      <p>Conquistas: 42</p>
+      <p>Jogos: 12</p>
+    </div>
+  </div>
 </section>
 
-<footer>
-<div>
-<h3>Speam</h3>
-<p>Plataforma gamer futurista.</p>
-</div>
+<div id="notification"></div>
 
-<div>
-<h4>Links</h4>
-<p>Termos</p>
-<p>Privacidade</p>
-<p>Suporte</p>
-</div>
-
-<div>
-<h4>Redes</h4>
-<p>Discord</p>
-<p>YouTube</p>
-<p>Instagram</p>
-</div>
-</footer>
-
-<div class="cart-sidebar" id="cartSidebar">
-<div class="cart-header">
-<h2>Carrinho</h2>
-<button id="closeCart">X</button>
-</div>
-
-<div id="cartItems"></div>
-
-<div class="cart-total">
-Total: R$ <span id="total">0</span>
-</div>
-</div>
-
-<script src="js/script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
