@@ -1,1 +1,141 @@
-<!DOCTYPE html><html><head><title>Speam</title><link rel='stylesheet' href='css/style.css'></head><body><h1>Speam Home</h1><script src='js/script.js'></script></body></html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speam</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background-glow"></div>
+
+<header class="navbar">
+<div class="logo">SPEAM</div>
+
+<nav>
+<a href="#">Início</a>
+<a href="#">Loja</a>
+<a href="#">Biblioteca</a>
+<a href="#">Comunidade</a>
+<a href="#">Notícias</a>
+<a href="#">Suporte</a>
+</nav>
+
+<div class="actions">
+<input type="text" id="searchInput" placeholder="Pesquisar jogos">
+<button class="blue-btn">Login</button>
+<button class="outline-btn">Cadastro</button>
+<button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+</div>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>O futuro dos games começa agora.</h1>
+<p>Experimente uma plataforma gamer premium inspirada nas maiores lojas AAA do mundo.</p>
+
+<div class="hero-buttons">
+<button class="blue-btn">Comprar Agora</button>
+<button class="outline-btn">Ver Trailer</button>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-header">
+<h2>Jogos Populares</h2>
+</div>
+
+<div class="games-grid" id="gamesGrid"></div>
+</section>
+
+<section class="section">
+<div class="section-header">
+<h2>Biblioteca</h2>
+</div>
+
+<div class="library-grid">
+<div class="library-card">
+<h3>Cyber Nova</h3>
+<p>128 horas jogadas</p>
+<div class="progress"><span style="width:85%"></span></div>
+</div>
+
+<div class="library-card">
+<h3>Dark Ruins</h3>
+<p>72 horas jogadas</p>
+<div class="progress"><span style="width:55%"></span></div>
+</div>
+
+<div class="library-card">
+<h3>Galaxy Arena</h3>
+<p>204 horas jogadas</p>
+<div class="progress"><span style="width:95%"></span></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-header">
+<h2>Comunidade</h2>
+</div>
+
+<div class="community-post">
+<div class="avatar">🎮</div>
+<div>
+<h3>PlayerX</h3>
+<p>Cyber Nova é o melhor RPG sci-fi do ano.</p>
+<span>👍 4.2k curtidas</span>
+</div>
+</div>
+
+<div class="community-post">
+<div class="avatar">🔥</div>
+<div>
+<h3>ShadowHunter</h3>
+<p>Dark Ruins tem a atmosfera mais insana que já vi.</p>
+<span>👍 2.1k curtidas</span>
+</div>
+</div>
+</section>
+
+<footer>
+<div>
+<h3>Speam</h3>
+<p>Plataforma gamer futurista.</p>
+</div>
+
+<div>
+<h4>Links</h4>
+<p>Termos</p>
+<p>Privacidade</p>
+<p>Suporte</p>
+</div>
+
+<div>
+<h4>Redes</h4>
+<p>Discord</p>
+<p>YouTube</p>
+<p>Instagram</p>
+</div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar">
+<div class="cart-header">
+<h2>Carrinho</h2>
+<button id="closeCart">X</button>
+</div>
+
+<div id="cartItems"></div>
+
+<div class="cart-total">
+Total: R$ <span id="total">0</span>
+</div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
