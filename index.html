@@ -1,140 +1,110 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SPEAM</title>
+<title>SPEAM+</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="loginScreen" class="login-screen">
-  <div class="login-box">
-    <h1>SPEAM</h1>
-    <input id="username" placeholder="Digite seu usuário">
-    <button onclick="login()">ENTRAR</button>
+<div class="topbar">
+  <div class="logo">SPEAM</div>
+
+  <div class="menu">
+    <a href="#">LOJA</a>
+    <a href="#">BIBLIOTECA</a>
+    <a href="#">COMUNIDADE</a>
+  </div>
+
+  <div class="profile">
+    <span id="user">Player</span>
   </div>
 </div>
 
-<header>
-  <div class="logo">SPEAM</div>
-
-  <nav>
-    <a href="#store">Loja</a>
-    <a href="#library">Biblioteca</a>
-    <a href="#community">Comunidade</a>
-    <a href="#profile">Perfil</a>
-  </nav>
-
-  <div class="profile-mini">
-    <span id="profileName">Convidado</span>
-    <div class="avatar"></div>
-  </div>
-</header>
-
 <section class="hero">
-  <div>
-    <h1>Bem-vindo à SPEAM</h1>
-    <p>Uma experiência inspirada em launchers modernos.</p>
-    <button onclick="showNotification('Explorando loja...')">EXPLORAR</button>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>CYBER FUTURE 2078</h1>
+
+    <p>
+      Explore uma megacidade futurista dominada por corporações.
+    </p>
+
+    <div class="hero-buttons">
+      <button onclick="watchTrailer()">VER TRAILER</button>
+      <button onclick="buyNow()">COMPRAR AGORA</button>
+    </div>
   </div>
 </section>
 
-<section id="store" class="section">
-  <h2>DESTAQUES</h2>
+<div id="trailerModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeTrailer()">×</span>
 
-  <div class="games">
+    <iframe
+      id="trailerFrame"
+      width="100%"
+      height="100%"
+      src=""
+      title="Trailer"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<section class="section">
+  <h2>JOGOS EM DESTAQUE</h2>
+
+  <div class="grid">
 
     <div class="card">
-      <div class="thumb one"></div>
-      <h3>Cyber Future</h3>
-      <p>R$ 149,90</p>
+      <div class="thumb t1"></div>
 
-      <div class="buttons">
-        <button onclick="buyGame('Cyber Future')">Comprar</button>
-        <button onclick="wishlist('Cyber Future')">Wishlist</button>
+      <div class="card-content">
+        <h3>Cyber Future</h3>
+        <p>R$ 149,90</p>
+
+        <button onclick="buyGame('Cyber Future')">
+          Comprar
+        </button>
       </div>
     </div>
 
     <div class="card">
-      <div class="thumb two"></div>
-      <h3>Shadow Arena</h3>
-      <p>R$ 59,90</p>
+      <div class="thumb t2"></div>
 
-      <div class="buttons">
-        <button onclick="buyGame('Shadow Arena')">Comprar</button>
-        <button onclick="wishlist('Shadow Arena')">Wishlist</button>
-      </div>
-    </div>
+      <div class="card-content">
+        <h3>Shadow Arena</h3>
+        <p>R$ 59,90</p>
 
-    <div class="card">
-      <div class="thumb three"></div>
-      <h3>Night Protocol</h3>
-      <p>R$ 89,90</p>
-
-      <div class="buttons">
-        <button onclick="buyGame('Night Protocol')">Comprar</button>
-        <button onclick="wishlist('Night Protocol')">Wishlist</button>
+        <button onclick="buyGame('Shadow Arena')">
+          Comprar
+        </button>
       </div>
     </div>
 
   </div>
-</section>
-
-<section id="library" class="section">
-  <h2>BIBLIOTECA</h2>
-
-  <div id="libraryList"></div>
 </section>
 
 <section class="section">
-  <h2>DOWNLOAD SIMULADO</h2>
+  <h2>CARRINHO</h2>
 
-  <div class="download-box">
-    <p id="downloadText">Nenhum download em andamento.</p>
+  <div id="cart"></div>
 
-    <div class="progress">
-      <div id="progressBar"></div>
-    </div>
-  </div>
-</section>
-
-<section id="community" class="section">
-  <h2>COMUNIDADE</h2>
-
-  <div class="community-post">
-    <strong>PlayerBR</strong>
-    <p>acabou de desbloquear uma conquista rara.</p>
-  </div>
-
-  <div class="community-post">
-    <strong>GhostZX</strong>
-    <p>publicou uma nova screenshot.</p>
-  </div>
-
-  <div class="community-post">
-    <strong>NovaTeam</strong>
-    <p>está procurando jogadores.</p>
-  </div>
-</section>
-
-<section id="profile" class="section">
-  <h2>PERFIL</h2>
-
-  <div class="profile-box">
-    <div class="avatar large"></div>
-
-    <div>
-      <h3 id="profileBig">Convidado</h3>
-      <p>Nível 17</p>
-      <p>Conquistas: 42</p>
-      <p>Jogos: 12</p>
-    </div>
+  <div class="checkout">
+    <button onclick="checkout()">
+      FINALIZAR COMPRA
+    </button>
   </div>
 </section>
 
 <div id="notification"></div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
